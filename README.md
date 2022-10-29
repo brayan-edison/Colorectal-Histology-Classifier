@@ -31,8 +31,16 @@ The Dataset is divided into training, validation and testing with the split rati
 #### Data Augmentation layer:
 A data augmentation layer that performs random flip, random rotation and random zoom is used as the first layer of the network. 
 
-This layer is used to introduce diversity in training dataset so that our model generalizes well for the testing phase. 
+This layer is used to introduce diversity in training dataset so that our model generalizes well for the testing phase. The layer is fed images in batches of 32.
 ```
-Input shape: (150, 150, 3)
-Output shape: (150, 150, 3)
+Input shape: (32, 150, 150, 3)
+Output shape: (32, 150, 150, 3)
 ```
+#### Convolutional Layers and Dense Layers:
+2d convolutional layers are used with filter sizes 32 and 64. Activation function for each Conv2d layer is Rectified Linear function (ReLu) which is a piecewise linear function. ReLu is used to overcome the vanishing gradient problem that allows the model to learn faster and perform better.
+The kernel for all convolutinal layers is of size (3x3) in order to maximize shape detection. 
+
+2 stacks of 2 conv2d layers with filter size 32, where each stack is followed by a batchnormalization and a maxpooling layer. 
+This is followed by another 2 stacks of 2 conv2d layers with filter size 64, where each stack is followed by a batchnormalization and a maxpooling layer.
+
+The convolutional layers are followed by 2 dense layers with 512 units each, again with ReLu activation and finally a final output layer with 8 layers with a softmax activation function.
