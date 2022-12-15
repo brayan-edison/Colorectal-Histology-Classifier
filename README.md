@@ -78,8 +78,31 @@ Accuracy is used as the metrics for the model.
 A model checkpoint is created that saves the weights of neurons of the best performing epoch w.r.t validation accuracy in a file.
 
 ## Results:
-The best model gives a validation accuracy of 93.8%. 
+The best model gives a validation accuracy of 90%. 
 
-![acc](https://user-images.githubusercontent.com/47920247/199352327-489ec74b-70eb-4bb1-9098-5ebd4495658c.png)
+![train_val_acc_loss](https://user-images.githubusercontent.com/47920247/207985078-7b31251f-95a0-4fb2-90d1-ff22025e87be.png)
 
 On the test data, the model gives an accuracy of 91%
+
+## Evaluation:
+From the following confusion matrix, we can infer the performance of our model on test dataset. 
+
+![Confusion_mat](https://user-images.githubusercontent.com/47920247/207986059-5b2c1032-9ec2-402d-acfc-277ae4a908f0.png)
+
+We get the idea from the confusion matrix, but to get the jot the performance in numbers, we figure out the model's evaluation metrics
+
+```
+Macro Average Precision: 92%
+Macro Average Recall: 91%
+Macro Average F1 Score: 91%
+
+Weighted Average Precision: 91%
+Weighted Average Recall: 91%
+Weighted Average F1 Score: 91%
+```
+Now we want our model to be sensitive towards tumor. And that is something that is achieved with a complete 100% Recall for Tumor. 
+Which means that our model is highly sensitive in detecting tumor. 
+Even though for classifying a colorectal histology as tumor has a precision of 88%, the harmonic mean between Precision and Recall is 94%. A good trade-off between precision and sensitivity.
+
+## Future:
+Next steps would involve using image segmentation to identify the classified areas in colorectal histology.
