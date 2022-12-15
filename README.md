@@ -80,14 +80,14 @@ A model checkpoint is created that saves the weights of neurons of the best perf
 ## Results:
 The best model gives a validation accuracy of 90%. 
 
-![train_val_acc_loss](https://user-images.githubusercontent.com/47920247/207985078-7b31251f-95a0-4fb2-90d1-ff22025e87be.png)
+![train_val_acc_loss](https://user-images.githubusercontent.com/47920247/207989901-da3cc0d9-927e-49bd-b57b-36ee6b32ac4c.png)
 
 On the test data, the model gives an accuracy of 91%
 
 ## Evaluation:
 From the following confusion matrix, we can infer the performance of our model on test dataset. 
 
-![Confusion_mat](https://user-images.githubusercontent.com/47920247/207986059-5b2c1032-9ec2-402d-acfc-277ae4a908f0.png)
+![Confusion_mat](https://user-images.githubusercontent.com/47920247/207989831-0cd0f700-5ab9-4c51-8f18-2ba4b0d7a14d.png)
 
 We get the idea from the confusion matrix, but to get the jot the performance in numbers, we figure out the model's evaluation metrics
 
